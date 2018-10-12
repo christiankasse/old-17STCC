@@ -22,6 +22,8 @@
 
 <?php endif ?>
 
+
+
 <!doctype html>
 <html lang="en">
     <head>
@@ -31,11 +33,11 @@
         <meta name="description" content="">
         <meta name="author" content="">
         <link rel="icon" href="<?php echo base_url()?>assets/images/favicon.ico">
-        <title>Eglise du Christ au Congo</title>
+         <title>Eglise du Christ au Congo</title>
 
-        <link type="text/css" href="<?php echo css_url('bootstrap.min')?>" rel="stylesheet">
-        <link type="text/css" href="<?php echo base_url()?>assets/stylesheets/main.css" rel="stylesheet">
-        <link type="text/css" href="<?php echo base_url()?>assets/stylesheets/responsive.css" rel="stylesheet">
+        <link href="<?php echo base_url()?>assets/stylesheets/bootstrap.min.css" rel="stylesheet">
+        <link href="<?php echo base_url()?>assets/stylesheets/main.css" rel="stylesheet">
+        <link href="<?php echo base_url()?>assets/stylesheets/responsive.css" rel="stylesheet">
 
       
         <link rel="apple-touch-icon" sizes="57x57" href="//img1.wsimg.com/ux/favicon/apple-icon-57x57.png">
@@ -56,8 +58,8 @@
         <meta name="msapplication-TileColor" content="#ffffff">
         <meta name="msapplication-TileImage" content="//img1.wsimg.com/ux/favicon/ms-icon-144x144.png">
         <meta name="theme-color" content="#ffffff"> 
-
     </head>
-<body>
-<?php require 'navbar.php';?>
+    
+    <body>
 
+        <?php require_once('navbar.php'); ?>

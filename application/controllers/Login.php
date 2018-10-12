@@ -43,7 +43,7 @@ class Login extends CI_Controller {
 	public function actionRegister() {
 
 		// field name, error message, validation rules
-		$this->form_validation->set_rules('name', 'Votre nom', 'callback_check_name_exists|trim|required|min_length[4]');
+		$this->form_validation->set_rules('name', 'Votre nom', 'callback_check_name_exists|trim|required');
 		$this->form_validation->set_rules('lastname', 'Votre prénom', 'trim|required|min_length[4]');
 		$this->form_validation->set_rules('email', 'Votre Email', 'callback_check_email_exists|trim|required|valid_email');
 		$this->form_validation->set_rules('password', 'Votre mot de passe', 'trim|required|min_length[4]|max_length[32]');
