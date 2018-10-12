@@ -187,6 +187,41 @@ h5{
 		font-size: 35pt;
 	}
 }
+
+// CAROUSEL HIDDEN FOR LARGER SCREENS
+#carroussel_hidden{
+
+	background-color: #00829A;
+	color: #FFF;
+	text-align: center;
+	padding-bottom: 10pt; 	
+
+	h3{
+		padding-top: 5pt;
+	}
+	
+	p{
+		.btn-important {
+
+	  		color: #fff;
+		  	background-color: #28626D;
+		  	border-color: #28626D;
+		  	font-weight: 500;
+		  	padding-left: 8%;
+
+		  	padding-right: 8%;
+
+		  	&:focus,&:hover{
+
+		  		color: #fff;
+		  		background-color: #28626D;
+		  		border-color: #28626D;
+		  	}
+		}
+	}
+}
+
+
 /*end*/
 
 .missions{

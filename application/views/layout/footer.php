@@ -5,7 +5,7 @@
             <span>F. #Egliseduchristaucongo</span>
             <span>T. @Eglise du christ au congo</span>
         </p>
-       <h6 class="text-center">EGLISE DU CHRIST AU CONGO | E.C.C. &copy; 1924 - <?php echo date('Y'); ?>,  Tous droits réservés !</h6>
+       <h6 class="text-center">Eglise du Christ au congo | E.C.C. &copy; 1924 - <?php echo date('Y'); ?>,  Tous droits réservés !</h6>
     </div>
 </section>
 

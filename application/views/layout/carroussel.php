@@ -1,5 +1,5 @@
 <section id="courousel">
-    <div id="myCarousel" class="carousel slide" data-ride="carousel">
+    <div id="myCarousel" class="carousel slide d-none d-lg-block" data-ride="carousel">
         <ol class="carousel-indicators">
             <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
             <li data-target="#myCarousel" data-slide-to="1"></li>
@@ -38,7 +38,7 @@
             </div>
         </div>
 
-        <!-- <a class="carousel-control-prev" href="#myCarousel" role="button" data-slide="prev">
+        <a class="carousel-control-prev" href="#myCarousel" role="button" data-slide="prev">
             <span class="carousel-control-prev-icon" aria-hidden="true"></span>
             <span class="sr-only">Previous</span>
         </a>
@@ -46,6 +46,21 @@
         <a class="carousel-control-next" href="#myCarousel" role="button" data-slide="next">
             <span class="carousel-control-next-icon" aria-hidden="true"></span>
             <span class="sr-only">Next</span>
-        </a> -->
+        </a>
+    </div>
+</section>
+
+<section id="carroussel_hidden" class="d-lg-none">
+    <div class="container">
+        <h3>Eglise du Christ au Congo</h3>
+        <p>
+            Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+            tempor incididunxaute irure dolor in reprehenderit in voluptate velit esse
+            cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
+            proident, sunt in culpa qui offici est laborum.
+        </p>
+       
+        <p class="col-md-2"><a href="#" class="btn btn-important btn-sm btn-block">Lire plus</a></p>
+
     </div>
 </section>

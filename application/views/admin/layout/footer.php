@@ -1,8 +1,9 @@
 <section class="footer_description">
     <div class="container">
-       
-       <small>Design by hb11</small>
-    </div>
+     	<h6 class="text-center">
+     		Eglise du Christ au congo | E.C.C. &copy; 1924 - <?php echo date('Y'); ?>,  Tous droits réservés !
+     	</h6>
+      </div>
 </section>
 
 <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
