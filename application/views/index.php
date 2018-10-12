@@ -3,8 +3,8 @@
 <div class="container"><br>	
 	<section class="missions">
 		<div class="row">
-			<div class="col-md-4">
-				<div class="card">
+			<div class="col-md-4 mx-auto">
+				<div class="card mb-3">
 				    <img class="card-img-top" src="" alt="image illustratif">
 				    <div class="card-body">
 				      	<h3 class="card-title text-center">Mission de l'ECC</h3>
@@ -16,8 +16,8 @@
 	  			</div>
 			</div>
 
-			<div class="col-md-4">
-				<div class="card">
+			<div class="col-md-4 mx-auto">
+				<div class="card mb-3">
 				    <img class="card-img-top" src="" alt="image illustratif">
 				    <div class="card-body">
 				      	<h3 class="card-title text-center">ECC  & Société</h3>
@@ -29,8 +29,8 @@
 	  			</div>
 			</div>
 
-			<div class="col-md-4">
-				<div class="card">
+			<div class="col-md-4 mx-auto">
+				<div class="card mb-3">
 				    <img class="card-img-top" src="" alt="image illustratif">
 				    <div class="card-body">
 				      	<h3 class="card-title text-center">Nos Communautés</h3>
@@ -48,9 +48,9 @@
 <section class="message_provider">
 	<div class="container">
 
-		<p>
-			Lorem ipsum dolor sit amet, consectetur adipisicin
-		</p>
+		<h6 style="padding-bottom: 10pt;">
+			Echo de la Présidence Nationale
+		</h6>
 	</div>
 </section>
 

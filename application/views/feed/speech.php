@@ -2,7 +2,7 @@
 	<div class="row">
 		<div class="col-md-8 mx-auto">
 			
-			<h3 class="text-center ecc_detail">Lorem ipsum dolor sit amet, consectetur adipisicin</h3>
+			<h3 class="text-center ecc_detail">Echo de la Présidence Nationale</h3>
 
 
 			<blockquote class="blockquote">
@@ -13,7 +13,7 @@
   				cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
   				proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
 
-  				<h4 class="text-muted">Christian KASSE</h4>
+  				<h4 class="text-muted">Nom du président</h4>
   			
   				<footer class="blockquote-footer">
   					<strong>Président National de l'ECC</strong> 
