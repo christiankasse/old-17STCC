@@ -62,7 +62,7 @@
 			proident, sunt in culpa qui officia deserunt mollit anim id est laborum. ...
 		</p>
 
-		<h5 class="text-right  president"><span>Nom du PRESIDENT NATIONAL</span></h5>
+		<h5 class="text-right  president"><span>Rev. Dr. André BOKUNDA-bo Likabe</span></h5>
 
 		<h6 class="text-right  president">Président National de l'ECC </h6>
 		<p class=" col-md-2"><a href="<?php echo site_url() ?>/feed/speech" class="btn btn-important btn-sm btn-block">Voir plus</a></p>

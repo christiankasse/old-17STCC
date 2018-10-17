@@ -12,6 +12,7 @@
 
 			    <h2 class="text-center">Upload Hierachie</h2><hr>
 			    <input type="hidden" name="slug" value="<?php echo $hierachie['slug']; ?>">
+			    <input type="hidden" name="profile" value="<?php echo $hierachie['profile']; ?>">
 
 				<div class="form-group">
 					<label>Inserez la photo de profile</label>

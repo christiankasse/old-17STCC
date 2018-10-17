@@ -487,10 +487,20 @@ class Crud extends CI_Controller {
 
 		} else {
 
+			if ($this->upload->do_upload('url') == FALSE) {
+
+				$url     		= $this->input->post('url');
+				$this->slide->setUrl($url);
+
+			}else{
+
+				$this->slide->setUrl($this->upload->data('file_name'));
+			}
+
 			$title     	= $this->input->post('title');
 			$content 	= $this->input->post('content');
 
-			$this->slide->setUrl($this->upload->data('file_name'));
+			
 			$this->slide->setTitle($title);
 			$this->slide->setContent($content);
 			$this->slide->setSlug(url_title(uniqid()));
@@ -618,14 +628,25 @@ class Crud extends CI_Controller {
 
 		} else {
 
+			if ($this->upload->do_upload('url') == FALSE) {
+
+				$url     		= $this->input->post('url');
+				$this->mission->setUrl($url);
+
+			}else{
+
+				$this->mission->setUrl($this->upload->data('file_name'));
+			}
+
 			$title     		= $this->input->post('title');
 			$categorie     	= $this->input->post('categorie');
 			$description 	= $this->input->post('description');
-
-			$this->mission->setUrl($this->upload->data('file_name'));
+			
+			
 			$this->mission->setTitle($title);
 			$this->mission->setCategorie($categorie);
 			$this->mission->setDescription($description);
+
 			$this->mission->setPost(FALSE);
 			$this->mission->setSlug(uniqid());
 			$this->mission->setDate();
@@ -871,11 +892,21 @@ class Crud extends CI_Controller {
 
 		} else {
 
+			if ($this->upload->do_upload('url') == FALSE) {
+
+				$url     		= $this->input->post('url');
+				$this->feed->setUrl($url);
+
+			}else{
+
+				$this->feed->setUrl($this->upload->data('file_name'));
+			}
+
 			$title     		= $this->input->post('title');
 			$categorie     	= $this->input->post('categorie');
 			$description 	= $this->input->post('description');
 
-			$this->feed->setUrl($this->upload->data('file_name'));
+			
 			$this->feed->setTitle($title);
 			$this->feed->setCategorie($categorie);
 			$this->feed->setDescription($description);
@@ -1002,11 +1033,21 @@ class Crud extends CI_Controller {
 
 		} else {
 
+			if ($this->upload->do_upload('url') == FALSE) {
+
+				$url     		= $this->input->post('url');
+				$this->community->setUrl($url);
+
+			}else{
+
+				$this->community->setUrl($this->upload->data('file_name'));
+			}
+
 			$name     			= $this->input->post('name');
 			$denomination     	= $this->input->post('denomination');
 			$description 		= $this->input->post('description');
 
-			$this->community->setUrl($this->upload->data('file_name'));
+			
 			$this->community->setName($name);
 			$this->community->setDenomination($denomination);
 			$this->community->setDescription($description);
@@ -1378,11 +1419,21 @@ class Crud extends CI_Controller {
 
 		} else {
 
+			if ($this->upload->do_upload('profile') == FALSE) {
+
+				$profile     		= $this->input->post('profile');
+				$this->hierachie->setProfile($profile);
+
+			}else{
+
+				$this->hierachie->setProfile($this->upload->data('file_name'));
+			}
+
 			$nom     		= $this->input->post('nom');
 			$fonction     	= $this->input->post('fonction');
 			$presentation 	= $this->input->post('presentation');
 			
-			$this->hierachie->setProfile($this->upload->data('file_name'));
+			
 			$this->hierachie->setNom($nom);
 			$this->hierachie->setFonction($fonction);
 			$this->hierachie->setPresentation($presentation);
@@ -1507,10 +1558,20 @@ class Crud extends CI_Controller {
 
 		} else {
 
+			if ($this->upload->do_upload('url') == FALSE) {
+
+				$url     		= $this->input->post('url');
+				$this->news->setUrl($url);
+
+			}else{
+
+				$this->news->setUrl($this->upload->data('file_name'));
+			}
+
 			$title     		= $this->input->post('title');
 			$description     	= $this->input->post('description');
 
-			$this->news->setUrl($this->upload->data('file_name'));
+			
 			$this->news->setTitle($title);
 			$this->news->setDescription($description);
 			$this->news->setPost(FALSE);
@@ -1760,11 +1821,22 @@ class Crud extends CI_Controller {
 
 		} else {
 
+			
+			if ($this->upload->do_upload('image') == FALSE) {
+
+				$image     		= $this->input->post('image');
+				$this->news->setImage($image);
+
+			}else{
+
+				$this->archives->setImage($this->upload->data('file_name'));
+			}
+
 			$title     		= $this->input->post('title');
 			$description    = $this->input->post('description');
 			$location 		= $this->input->post('location');
 
-			$this->archives->setImage($this->upload->data('file_name'));
+			
 			$this->archives->setTitle($title);
 			$this->archives->setDescription($description);
 			$this->archives->setlocation($location);

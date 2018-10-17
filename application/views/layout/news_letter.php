@@ -6,10 +6,10 @@
         ):
     ?>
     
-    <div class="alert alert-success text-center news_accept" role="alert">
-        <h5 class="alert-heading">Enregistrement au Newsletter!</h5><hr>
+    <div class="alert alert-success text-center news_accept" role="alert"><br>
+        <h4 class="alert-heading"><strong>Enregistrement au Newsletter!</strong></h4><hr>
         
-        <p><strong><?php echo strtoupper($this->session->userdata('name')); ?></strong> bienvenue au Newsletter de l'ECC, vous venez de vous enregitrez à notre newsletter</p>
+        <p><strong><?php echo '<strong>'.strtoupper($this->session->userdata('name')).'</strong>'; ?></strong> bienvenue au Newsletter de l'ECC, vous venez de vous enregitrez à notre newsletter</p>
         <p >Merci de votre confiance, et decouvrez toutes informations concernant l'ECC partant de votre adress email !</p>
     </div>
 

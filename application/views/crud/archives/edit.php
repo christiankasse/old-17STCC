@@ -12,6 +12,7 @@
 
 			    <h2 class="text-center">Upload Archives </h2><hr>
 			    <input type="hidden" name="slug" value="<?php echo $archives['slug'] ?>">
+			    <input type="hidden" name="image" value="<?php echo $archives['image'] ?>">
 
 				<div class="form-group">
 				    <label >Photos de la partie</label>

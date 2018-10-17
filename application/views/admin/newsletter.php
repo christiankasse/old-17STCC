@@ -14,7 +14,7 @@
 				    <tr>
 				      	<th scope="col">Nom</th>
 				      	<th scope="col">Email</th>
-				      	<th scope="col">status</th>
+				      	<th scope="col">Date</th>
 				    </tr>
 					</thead>
 					<tbody>
@@ -28,7 +28,13 @@
 							
 							<td><?php echo $row->name;?></td>
 							<td><i><?php echo $row->email;?></i></td>
-							<td>---</td>
+							<td>
+								<?php 
+									$date = date_create($row->created_at);
+									echo date_format($date, 'd/m/Y').' à '.date_format($date, 'H:i');
+								?>
+									
+								</td>
 							<td><a href="<?php echo site_url()?>/crud/newsletter" class="btn btn-success btn-sm">Envoyez un Email</a></td>
 						</tr>
 						<?php

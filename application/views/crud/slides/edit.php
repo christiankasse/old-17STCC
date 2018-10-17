@@ -12,6 +12,7 @@
 
 			    <h2 class="text-center">Upload Slides</h2><hr>
 			    <input type="hidden" name="slug" value="<?php echo $slide['slug'] ?>">
+			    <input type="hidden" name="url" value="<?php echo $slide['url'] ?>">
 			    
 				<div class="form-group ">
 				    <label for="InputFile">Photos du slide</label>

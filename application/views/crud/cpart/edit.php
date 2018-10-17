@@ -12,6 +12,7 @@
 			    <h2 class="text-center">Upload Center Part | Feed </h2><hr>
 				<div class="form-group">
 					<input type="hidden" name="slug" value="<?php echo $cpart['slug']; ?>">
+					<input type="hidden" name="url" value="<?php echo $cpart['url']; ?>">
 				    <label >Photos de la partie</label>
 				    <input type="file" name="url" value="<?php echo $cpart['url']; ?>">
 				</div>

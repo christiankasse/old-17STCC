@@ -12,6 +12,7 @@
 			    <h2 class="text-center">Update Community </h2><hr>
 			   
 			    <div class="form-group">
+			    	<input type="hidden" name="url" value="<?php echo $community['url']; ?>">
 				    <label >Photos de la partie</label>
 				    <input type="file" name="url">
 				</div>

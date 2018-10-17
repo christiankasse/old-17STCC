@@ -11,7 +11,8 @@
 			<?php echo form_open_multipart(site_url('crud/update_news'));?>
 			    <h2 class="text-center">Upload News </h2><hr>
 		    	<input type="hidden" name="slug" class="form-control" value="<?php echo $news['slug'] ?>">
-
+		    	<input type="hidden" name="url" class="form-control" value="<?php echo $news['url'] ?>">
+		    	
 				<div class="form-group">
 				    <label >Photos de la partie</label>
 				    <input type="file" name="url">

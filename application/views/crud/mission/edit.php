@@ -12,10 +12,11 @@
 
 			    <h2 class="text-center">Update mission</h2><hr>
 			    <input type="hidden" name="slug" value="<?php echo $mission['slug'] ?>">
+			    <input type="hidden" name="url" value="<?php echo $mission['url'] ?>">
 			    
 				<div class="form-group ">
 				    <label for="InputFile">Photos du mission</label>
-				    <input type="file" name="url" id="InputFile">
+				    <input type="file" name="url" id="InputFile" value="<?php echo $mission['url'] ?>">
 				</div>
 
 				<div class="form-group">

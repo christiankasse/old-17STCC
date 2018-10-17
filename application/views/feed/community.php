@@ -1,7 +1,7 @@
 <section class="nav_current">
 	<div class="container">
 		<p>
-			Communautés constitutives de l'ECC
+			Communautés constitutive de l'ECC
 		</p>
 	</div>
 </section>
