@@ -128,6 +128,17 @@ class Events_model extends CI_Model {
 		return $this->db->insert_id();
 	}
 
+	public function getLastEvents() {
+
+		$this->db->select('*');
+		$this->db->from('events');
+		$this->db->limit(5);
+		$this->db->where('post', 1);
+		$this->db->order_by('id', 'DESC');
+
+		return $query = $this->db->get();
+	}
+
 	public function updateEvents() {
 
 		$data = array(
@@ -152,6 +163,34 @@ class Events_model extends CI_Model {
 		$this->db->order_by('id', 'DESC');
 
 		return $query = $this->db->get();
+	}
+
+	public function getAllEvents() {
+
+		$this->db->select('*');
+		$this->db->from('events');
+		$this->db->order_by('id', 'DESC');
+		$this->db->where('post', 1);
+
+		return $query = $this->db->get();
+	}
+
+	public function getLastestEvents() {
+
+		$this->db->select('*');
+		$this->db->from('events');
+		$this->db->order_by('id', 'DESC');
+		$this->db->limit(1);
+		$this->db->where('post', 1);
+
+		return $query = $this->db->get();
+	}
+
+	public function getEvents($slug){
+
+		
+		$query = $this->db->get_where('events', array('slug' => $slug));
+		return $query->row_array();
 	}
 
 	public function get_events($slug = FALSE){

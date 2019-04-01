@@ -13,23 +13,23 @@
 			    <h2 class="text-center">Upload Speech</h2><hr>
 
 				<div class="form-group">
-				  	<textarea type="" name="historique" class="form-control" placeholder="Placez l'historique ici"></textarea>
+				  	<textarea type="" name="historique" id="editor1" rows="10" cols="80"  class="form-control" placeholder="Placez l'historique ici"></textarea>
 				</div>
 
 				<div class="form-group">
-				  	<textarea type="" name="status" class="form-control" placeholder="Placez les status ici"></textarea>
+				  	<textarea type="" name="status" id="editor1" rows="10" cols="80"  class="form-control" placeholder="Placez les status ici"></textarea>
 				</div>
 
 				<div class="form-group">
-				  	<textarea type="" name="mission" class="form-control" placeholder="Placez la mission ici"></textarea>
+				  	<textarea type="" name="mission" id="editor1" rows="10" cols="80"  class="form-control" placeholder="Placez la mission ici"></textarea>
 				</div>
 
 				<div class="form-group">
-				  	<textarea type="" name="symbole" class="form-control" placeholder="Placez la symbole ici"></textarea>
+				  	<textarea type="" name="symbole" id="editor1" rows="10" cols="80"  class="form-control" placeholder="Placez la symbole ici"></textarea>
 				</div>
 
 				<div class="form-group">
-				  	<textarea type="" name="vision" class="form-control" placeholder="Placez la vision ici"></textarea>
+				  	<textarea type="" name="vision" id="editor1" rows="10" cols="80"  class="form-control" placeholder="Placez la vision ici"></textarea>
 				</div>
 
 			    <div class="form-group">

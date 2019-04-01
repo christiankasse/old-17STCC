@@ -116,8 +116,6 @@ class Speech_model extends CI_Model {
 			'role'   				=> $this->role,
 			'description'	 		=> $this->description,
 			'slug'        			=> $this->slug,
-			'color_text'     		=> $this->color_text,
-			'color_description'     => $this->color_description,
 			'created_at' 			=> $this->created_at,
 		);
 
@@ -133,8 +131,6 @@ class Speech_model extends CI_Model {
 			'role'   				=> $this->role,
 			'description'	 		=> $this->description,
 			'slug'        			=> $this->slug,
-			'color_text'     		=> $this->color_text,
-			'color_description'     => $this->color_description,
 			'created_at' 			=> $this->created_at,
 		);
 
@@ -152,6 +148,17 @@ class Speech_model extends CI_Model {
 		return $query = $this->db->get();
 	}
 
+	public function getOnSpeech() {
+
+		$this->db->select('*');
+		$this->db->from('speech');
+		$this->db->limit(1);
+		$this->db->where('post',1);
+		$this->db->order_by('id', 'DESC');
+
+		return $query = $this->db->get();
+	}
+
 	public function get_speech($slug = FALSE){
 
 		if ($slug === FALSE) {	
@@ -161,6 +168,12 @@ class Speech_model extends CI_Model {
 
 			return $query->result_array();
 		}
+
+		$query = $this->db->get_where('speech', array('slug' => $slug));
+		return $query->row_array();
+	}
+
+	public function getLastSpeech($slug){
 
 		$query = $this->db->get_where('speech', array('slug' => $slug));
 		return $query->row_array();

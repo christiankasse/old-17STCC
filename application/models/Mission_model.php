@@ -133,8 +133,15 @@ class Mission_model extends CI_Model {
 		$this->db->select('*');
 		$this->db->from('mission');
 		$this->db->limit(3);
-		$this->db->order_by('id', 'DESC');
+		return $query = $this->db->get();
+	}
 
+	public function getMission() {
+
+		$this->db->select('*');
+		$this->db->from('mission');
+		$this->db->limit(3);
+		$this->db->where('post', 1);
 		return $query = $this->db->get();
 	}
 

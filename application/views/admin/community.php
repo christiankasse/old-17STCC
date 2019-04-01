@@ -24,15 +24,15 @@
 					  	</div>
 					  	<div class="card-body text-dark">
 						    
-						    <p class="card-text"><?php echo $row->description; ?></p>
+						    <p class="card-text"><?php echo word_limiter($row->description, 10); ?></p>
 						    <p>
-						    	<a href="<?php echo site_url() ?>/crud/view_community/<?php echo $row->name ?>" class="btn btn-primary btn-sm">Consultez | Modifier</a>
+						    	<a href="<?php echo site_url() ?>/crud/view_community/<?php echo $row->slug ?>" class="btn btn-primary btn-sm">Consultez | Modifier</a>
 						    	
 						    	<?php if ($row->post == 0): ?>
-									<a href="<?php echo site_url() ?>/crud/active_community/<?php echo $row->name ?>" class="btn btn-warning btn-sm">post</a>
+									<a href="<?php echo site_url() ?>/crud/active_community/<?php echo $row->slug ?>" class="btn btn-warning btn-sm">post</a>
 
 								<?php else: ?>
-									<a href="<?php echo site_url() ?>/crud/desactive_community/<?php echo $row->name ?>" class="btn btn-success btn-sm">post</a>
+									<a href="<?php echo site_url() ?>/crud/desactive_community/<?php echo $row->slug ?>" class="btn btn-success btn-sm">post</a>
 								<?php endif ?>
 						    </p>
 						  </div>

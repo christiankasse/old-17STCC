@@ -7,7 +7,9 @@
 
 	  	<div class=" col-md-9">
 		  <p>
-		   	 	<a href="<?php echo site_url()?>/crud/cpart" class="btn btn-primary btn-sm">Inserez un élement</a>
+		   	 	<a href="<?php echo site_url()?>/crud/cpart" class="btn btn-primary btn-sm">
+		   	 		Inserez un élement
+		   	 	</a>
 		   </p>
 		   <div class="row">
 		   		<?php
@@ -20,8 +22,9 @@
 					  	<div class="card-body text-dark">
 						    
 						    <p class="card-text">
-						    	<?php echo $row->description; ?>
+						    	<?php echo word_limiter($row->description, 20); ?>
 						    </p>
+
 						    <p>
 						    	<a href="<?php echo site_url() ?>/crud/view_cpart/<?php echo $row->slug ?>" class="btn btn-primary btn-sm">Consultez | Modifier</a>
 						    	

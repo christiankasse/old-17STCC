@@ -11,10 +11,12 @@ class Feed extends CI_Controller {
 		$this->load->view('layout/footer');
 	}
 
-	public function mission() {
+	public function mission($slug) {
+
+		$data['mission'] = $this->mission->get_mission($slug);
 
 		$this->load->view('layout/header');
-		$this->load->view('feed/mission');
+		$this->load->view('feed/mission', $data);
 		$this->load->view('layout/footer');
 	}
 
@@ -25,18 +27,29 @@ class Feed extends CI_Controller {
 		$this->load->view('layout/footer');
 	}
 
-
-	public function community() {
+	public function privacy() {
 
 		$this->load->view('layout/header');
-		$this->load->view('feed/community');
+		$this->load->view('feed/privacy');
 		$this->load->view('layout/footer');
 	}
 
-	public function speech() {
+
+	public function community($slug) {
+
+		$data['community'] = $this->community->getOneCommunity($slug);
 
 		$this->load->view('layout/header');
-		$this->load->view('feed/speech');
+		$this->load->view('feed/community', $data);
+		$this->load->view('layout/footer');
+	}
+
+	public function speech($slug) {
+
+		$data['speech'] = $this->speech->getLastSpeech($slug);
+
+		$this->load->view('layout/header');
+		$this->load->view('feed/speech',$data);
 		$this->load->view('layout/footer');
 	}
 

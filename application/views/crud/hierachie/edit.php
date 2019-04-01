@@ -28,7 +28,7 @@
 				</div>
 
 				<div class="form-group">
-				  	<textarea type="text" name="presentation" class="form-control"><?php echo $hierachie['presentation']; ?></textarea>
+				  	<textarea type="text" name="presentation" id="editor1" rows="10" cols="80" class="form-control"><?php echo $hierachie['presentation']; ?></textarea>
 				</div>
 
 			    <div class="form-group">

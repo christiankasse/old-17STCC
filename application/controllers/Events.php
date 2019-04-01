@@ -11,5 +11,15 @@ class Events extends CI_Controller {
 		$this->load->view('layout/footer');
 	}
 
+	public function show($slug) {
+
+		$data['events'] = $this->events->getEvents($slug);
+
+		$this->load->view('layout/header');
+		$this->load->view('events/show', $data);
+		$this->load->view('layout/news_letter');
+		$this->load->view('layout/footer');
+	}
+
 }
 

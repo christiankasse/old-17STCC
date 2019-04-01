@@ -132,10 +132,36 @@ class Archives_model extends CI_Model {
 
 		$this->db->select('*');
 		$this->db->from('archives');
-		$this->db->limit(3);
 		$this->db->order_by('id', 'DESC');
 
 		return $query = $this->db->get();
+	}
+
+	public function getLastArchives() {
+
+		$this->db->select('*');
+		$this->db->from('archives');
+		$this->db->limit(5);
+		$this->db->where('post', 1);
+		$this->db->order_by('id', 'DESC');
+
+		return $query = $this->db->get();
+	}
+
+	public function getAllArchives() {
+
+		$this->db->select('*');
+		$this->db->from('archives');
+		$this->db->order_by('id', 'DESC');
+		$this->db->where('post', 1);
+
+		return $query = $this->db->get();
+	}
+
+	public function getArchive($slug){
+
+		$query = $this->db->get_where('archives', array('slug' => $slug, 'post' => 1));
+		return $query->row_array();
 	}
 
 	public function get_archives($slug = FALSE){

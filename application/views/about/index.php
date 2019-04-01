@@ -32,74 +32,51 @@
 				  	</div>
 				  	<ul class="list-group list-group-flush">
 					    <li class="list-group-item"><a href="<?php echo site_url()?>/about/fonctionnement#Structure_de_l_ECC">Structure de l'ECC</a></li>
-					    <li class="list-group-item"><a href="<?php echo site_url()?>/about/fonctionnement#Departements">Départements</a></li>
+					    <li class="list-group-item"><a href="<?php echo site_url()?>/about/fonctionnement#Departements">Les Directions Nationales</a></li>
 					    <li class="list-group-item"><a href="<?php echo site_url()?>/about/fonctionnement#Organismes_associes">Organismes Associés</a></li>
 	  				</ul>
 				</div>
 
 				<div class="card card-organisationnelle">
+					
 				  	<div class="card-header">
 				    	<h5 class="text-center">Hiérarchie organisationnelle</h5>
 				  	</div>
+
 				  	<ul class="list-group list-group-flush">
-					    <li class="list-group-item"><a href="">Présendence National ?</a></li>
-					    <li class="list-group-item"><a href="">Comité ?? de l'ECC ?</a></li>
-					    <li class="list-group-item"><a href="">Comités provincial en RDC ?</a></li>
+					    <li class="list-group-item">
+					    	<a href="<?php echo site_url('about/hierachie#Presidence_National')?>">Mandataires au niveau national </a>
+					    </li>
+
+					     <li class="list-group-item">
+					    	<a href="<?php echo site_url('about/province')?>">Mandataires au niveau provincial </a>
+					    </li>
 	  				</ul>
 				</div>
 			</div>
 			
 			<div class="col-md-8">
-				
-				<h4 class="text-muted" id="Historique_de_l_ECC">HISTORIQUE DE L'ECC</h4>
-				<p>
-					Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-					tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
-					quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
-					consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
-					cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
-					proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
-				</p>
 
-				<h4 class="text-muted" id="Statut">STATUT</h4>
-				<p>
-					Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-					tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
-					quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
-					consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
-					cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
-					proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
-				</p>
+				<?php
+					$query = $this->presentation->presentation();
+					foreach ($query->result() as $row) {
+				?>
 
-				<h4 class="text-muted" id="Mission">MISSION</h4>
-				<p>
-					Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-					tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
-					quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
-					consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
-					cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
-					proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
-				</p>
+				<h5 class="text-muted" id="Historique_de_l_ECC">HISTORIQUE DE L'ECC</h5>
+				<div><?php echo $row->historique; ?></div>
 
-				<h4 class="text-muted" id="Symbole">SYMBOLE</h4>
-				<p>
-					Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-					tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
-					quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
-					consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
-					cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
-					proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
-				</p>
+				<h5 class="text-muted" id="Statut">STATUT</h5>
+				<div><?php echo $row->status; ?></div>
 
-				<h4 class="text-muted" id="Vision">VISION</h4>
-				<p>
-					Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-					tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
-					quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
-					consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
-					cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
-					proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
-				</p>
+				<h5 class="text-muted" id="Mission">MISSION</h5>
+				<div><?php echo $row->mission; ?></div>
+
+				<h5 class="text-muted" id="Symbole">SYMBOLE</h5>
+				<div><?php echo $row->symbole; ?></div>
+
+				<h5 class="text-muted" id="Vision">VISION</h5>
+				<div><?php echo $row->vision; ?></div>
+			<?php } ?>
 			</div>
 		</div>
 	</div>

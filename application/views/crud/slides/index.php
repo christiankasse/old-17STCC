@@ -25,7 +25,8 @@
 				</div>
 
 				<div class="form-group">
-				  	<textarea type="" name="content" class="form-control" id="editor" placeholder="Placez le contenue ici"></textarea>
+					<label>Description</label>
+				  	<textarea type="" name="content" id="editor1" rows="10" cols="80"  class="form-control" id="editor" placeholder="Placez le contenue ici"></textarea>
 				</div>
 
 			    <div class="form-group">

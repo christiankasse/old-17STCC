@@ -7,10 +7,11 @@ class Hierachie_model extends CI_Model {
 	private $profile;
 	private $nom;
 	private $fonction;
-	private $presentation;
+	private $provenance;
 	private $post;
 	private $created_at ;
 	private $slug;
+	private $mandat;
 
 	/**
 	 * @param mixed $profile
@@ -20,6 +21,18 @@ class Hierachie_model extends CI_Model {
 	public function setProfile($profile) {
 
 		$this->profile = $profile;
+
+		return $this;
+	}
+
+	/**
+	 * @param mixed $mandat
+	 *
+	 * @return self
+	 */
+	public function setMandat($mandat) {
+
+		$this->mandat = $mandat;
 
 		return $this;
 	}
@@ -49,13 +62,13 @@ class Hierachie_model extends CI_Model {
 	}
 
 	/**
-	 * @param mixed $presentation
+	 * @param mixed $provenance
 	 *
 	 * @return self
 	 */
-	public function setPresentation($presentation) {
+	public function setProvenance($provenance) {
 
-		$this->presentation = $presentation;
+		$this->provenance = $provenance;
 
 		return $this;
 	}
@@ -101,9 +114,10 @@ class Hierachie_model extends CI_Model {
 			'profile'   		=> $this->profile,
 			'nom'   			=> $this->nom,
 			'fonction'	 		=> $this->fonction,
-			'presentation'      => $this->presentation,
+			'provenance'      	=> $this->provenance,
 			'slug'        		=> $this->slug,
 			'post'        		=> $this->post,
+			'mandat'        	=> $this->mandat,
 			'created_at' 		=> $this->created_at,
 		);
 
@@ -118,9 +132,10 @@ class Hierachie_model extends CI_Model {
 			'profile'   		=> $this->profile,
 			'nom'   			=> $this->nom,
 			'fonction'	 		=> $this->fonction,
-			'presentation'      => $this->presentation,
+			'provenance'      	=> $this->provenance,
 			'slug'        		=> $this->slug,
 			'post'        		=> $this->post,
+			'mandat'        	=> $this->mandat,
 			'created_at' 		=> $this->created_at,
 		);
 
@@ -132,9 +147,27 @@ class Hierachie_model extends CI_Model {
 
 		$this->db->select('*');
 		$this->db->from('about_hierachie');
-		$this->db->limit(5);
+		// $this->db->limit(5);
 		$this->db->order_by('id', 'DESC');
 
+		return $query = $this->db->get();
+	}
+
+	public function getHierachie() {
+
+		$this->db->select('*');
+		$this->db->from('about_hierachie');
+		$this->db->where('post', 1);
+		$this->db->where('mandat', 'MN');
+		return $query = $this->db->get();
+	}
+
+	public function getProvinceHierachie() {
+
+		$this->db->select('*');
+		$this->db->from('about_hierachie');
+		$this->db->where('post', 1);
+		$this->db->where('mandat', 'MP');
 		return $query = $this->db->get();
 	}
 
@@ -149,6 +182,13 @@ class Hierachie_model extends CI_Model {
 		}
 
 		$query = $this->db->get_where('about_hierachie', array('slug' => $slug));
+		return $query->row_array();
+	}
+
+
+	public function getProfile($slug){
+
+		$query = $this->db->get_where('about_hierachie', array('slug' => $slug, 'post' => 1));
 		return $query->row_array();
 	}
 

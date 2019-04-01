@@ -14,23 +14,28 @@
 			    <input type="hidden" name="slug" value="<?php echo $presentation['slug'] ?>">
 
 				<div class="form-group">
-				  	<textarea type="" name="historique" class="form-control"><?php echo $presentation['historique'] ?></textarea>
+					<label>Historique de l'ECC</label>
+				  	<textarea type="" name="historique" id="editor1" rows="10" cols="80"  class="form-control"><?php echo $presentation['historique'] ?></textarea>
+				</div>
+
+				<div class="form-group">*
+					<label>Status de l'ECC</label>
+				  	<textarea type="" name="status" id="editor2" rows="10" cols="80"  class="form-control"><?php echo $presentation['status'] ?></textarea>
 				</div>
 
 				<div class="form-group">
-				  	<textarea type="" name="status" class="form-control"><?php echo $presentation['status'] ?></textarea>
+					<label>Mission de l'ECC</label>
+				  	<textarea type="" name="mission" id="editor3" rows="10" cols="80"  class="form-control"><?php echo $presentation['mission'] ?></textarea>
 				</div>
 
 				<div class="form-group">
-				  	<textarea type="" name="mission" class="form-control"><?php echo $presentation['mission'] ?></textarea>
+					<label>Symbole</label>
+				  	<textarea type="" name="symbole" id="editor4" rows="10" cols="80"  class="form-control"><?php echo $presentation['symbole'] ?></textarea>
 				</div>
 
 				<div class="form-group">
-				  	<textarea type="" name="symbole" class="form-control"><?php echo $presentation['symbole'] ?></textarea>
-				</div>
-
-				<div class="form-group">
-				  	<textarea type="" name="vision" class="form-control"><?php echo $presentation['vision'] ?></textarea>
+					<label>Vision de l'ECC</label>
+				  	<textarea type="" name="vision" id="editor5" rows="10" cols="80"  class="form-control"><?php echo $presentation['vision'] ?></textarea>
 				</div>
 
 			    <div class="form-group">

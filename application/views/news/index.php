@@ -5,156 +5,47 @@
 		</p>
 	</div>
 </section>
+
 <div class="container">
 	<section class="news">
 		<h2>Dernières Nouvelles et Activités</h2>
-		
+		<?php 
+			$this->db->from('news');
+			$this->db->where('post', 1); 
+		 ?>
+		 <?php if ($this->db->count_all_results() == 0): ?><br><br>
+		 	<div class="alert alert-info text-center">
+		 		<h5>Il n' ya pas d'actualités à votre porté, veillez passer ulterieurement</h5>
+		 		<h5>Nous vous rémercions de votre visite ! </h5>
+		 	</div><br><br>
+		 <?php endif ?>
 		<div class="row">
-			<div class="col-sm-3">
-				<figure>
-					<img src="<?php echo base_url()?>assets/images/bootstrap-social.png" class="img-fluid">
-				</figure>
-				<p>
-					<span class=""><small>14 Commentaires</small></span><br>
-					<span class=""><small>Postée le 02/12/2018 | 09:15</small></span>
-				</p>
 
-				<p>
-					<a href="<?php echo site_url() ?>/news/slug">Lorem ipsum dolor sit amet, consectetur </a>
-				</p>
+			<?php
+				$query = $this->news->getAllNews();
+				foreach ($query->result() as $row) {
+			?>
 
-				<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-				tempor incididunt ut lorum.</p>
-				<p>...</p>
+			<div class="col-md-3">
 				
+					<figure class="text-center">
+						<img style="width: 200pt ;height: 200pt" src="<?php echo base_url().'uploads/news/'. $row->url?>" class="img-fluid">
+					</figure>
+
+					<div class="card-body">
+						<p class="card-text">
+							<span class=""><small>Postée le <?php echo $row->created_at; ?></small></span>
+						</p>
+						<p class="card-text text-center" style="font-size: 15pt">
+							<a href="<?php echo site_url().'/news/show/'.$row->slug ?>"> 
+								<strong><?php echo $row->title; ?></strong> 
+							</a>
+						</p>
+						<?php echo word_limiter($row->description, 20); ?>
+					</div>
+			
 			</div>
-
-			<div class="col-sm-3">
-				<figure>
-					<img src="<?php echo base_url()?>assets/images/bootstrap-social.png" class="img-fluid">
-				</figure>
-				<p>
-					<span class=""><small>14 Commentaires</small></span><br>
-					<span class=""><small>Postée le 02/12/2018 | 09:15</small></span>
-				</p>
-
-				<p>
-					<a href="<?php echo site_url() ?>/news/slug">Lorem ipsum dolor sit amet, consectetur </a>
-				</p>
-
-				<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-				tempor incididunt ut lorum.</p>
-				<p>...</p>
-				
-			</div>
-
-			<div class="col-sm-3">
-				<figure>
-					<img src="<?php echo base_url()?>assets/images/bootstrap-social.png" class="img-fluid">
-				</figure>
-				<p>
-					<span class=""><small>14 Commentaires</small></span><br>
-					<span class=""><small>Postée le 02/12/2018 | 09:15</small></span>
-				</p>
-
-				<p>
-					<a href="<?php echo site_url() ?>/news/slug">Lorem ipsum dolor sit amet, consectetur </a>
-				</p>
-
-				<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-				tempor incididunt ut lorum.</p>
-				<p>...</p>
-				
-			</div>
-
-			<div class="col-sm-3">
-				<figure>
-					<img src="<?php echo base_url()?>assets/images/bootstrap-social.png" class="img-fluid">
-				</figure>
-				<p>
-					<span class=""><small>14 Commentaires</small></span><br>
-					<span class=""><small>Postée le 02/12/2018 | 09:15</small></span>
-				</p>
-
-				<p>
-					<a href="<?php echo site_url() ?>/news/slug">Lorem ipsum dolor sit amet, consectetur </a>
-				</p>
-
-				<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-				tempor incididunt ut lorum.</p>
-				<p>...</p>
-				
-			</div>
-
-			<div class="col-sm-3">
-				<figure>
-					<img src="<?php echo base_url()?>assets/images/bootstrap-social.png" class="img-fluid">
-				</figure>
-				<p>
-					<span class=""><small>14 Commentaires</small></span><br>
-					<span class=""><small>Postée le 02/12/2018 | 09:15</small></span>
-				</p>
-
-				<p>
-					<a href="<?php echo site_url() ?>/news/slug">Lorem ipsum dolor sit amet, consectetur </a>
-				</p>
-
-				<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-				tempor incididunt ut lorum.</p>
-				<p>...</p>
-				
-			</div>
-
-			<div class="col-sm-3">
-				<figure>
-					<img src="<?php echo base_url()?>assets/images/bootstrap-social.png" class="img-fluid">
-				</figure>
-				<p>
-					<span class=""><small>14 Commentaires</small></span><br>
-					<span class=""><small>Postée le 02/12/2018 | 09:15</small></span>
-				</p>
-
-				<p>
-					<a href="<?php echo site_url() ?>/news/slug">Lorem ipsum dolor sit amet, consectetur </a>
-				</p>
-
-				<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-				tempor incididunt ut lorum.</p>
-				<p>...</p>
-				
-			</div>
-
-			<div class="col-sm-3">
-				<figure>
-					<img src="<?php echo base_url()?>assets/images/bootstrap-social.png" class="img-fluid">
-				</figure>
-				<p>
-					<span class=""><small>14 Commentaires</small></span><br>
-					<span class=""><small>Postée le 02/12/2018 | 09:15</small></span>
-				</p>
-
-				<p>
-					<a href="<?php echo site_url() ?>/news/slug">Lorem ipsum dolor sit amet, consectetur </a>
-				</p>
-
-				<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-				tempor incididunt ut lorum.</p>
-				<p>...</p>
-				
-			</div>
+			<?php } ?>
 		</div>
-		<nav>
-				<ul class="pagination justify-content-center">
-				    <li class="page-item">
-				      <a class="page-link" href="#" tabindex="-1">Previous</a>
-				    </li>
-				    <li class="page-item"><a class="page-link" href="#">1</a></li>
-				    <li class="page-item active"><a class="page-link" href="#">2</a></li>
-				    <li class="page-item"><a class="page-link" href="#">3</a></li>
-				    <li class="page-item">
-				      <a class="page-link" href="#">Next</a>
-				    </li>
-				</ul>
-			</nav>
 	</section>
 </div>

@@ -137,13 +137,13 @@ class Crud extends CI_Controller {
 		$this->load->view('admin/layout/footer');
 	}
 
-	public function view_community($name){
+	public function view_community($slug){
 
 		if ($this->session->userdata('logged_in') == FALSE && 
 			is_null($this->session->userdata('username'))) {redirect('login');
 		} 
 
-		$data['community'] = $this->community->get_community($name);
+		$data['community'] = $this->community->get_community($slug);
 
 		$this->load->view('admin/layout/header');
 		$this->load->view('crud/community/view', $data);
@@ -727,8 +727,6 @@ class Crud extends CI_Controller {
 			$this->speech->setSpeaker($speaker);
 			$this->speech->setRole($role);
 			$this->speech->setDescription($description);
-			$this->speech->setColorTitle($color_text);
-			$this->speech->setColorDescription($color_description);
 			$this->speech->setPost(FALSE);
 			$this->speech->setSlug(uniqid());
 			$this->speech->setDate();
@@ -766,8 +764,6 @@ class Crud extends CI_Controller {
 			$this->speech->setSpeaker($speaker);
 			$this->speech->setRole($role);
 			$this->speech->setDescription($description);
-			$this->speech->setColorTitle($color_text);
-			$this->speech->setColorDescription($color_description);
 			$this->speech->setPost(FALSE);
 			$this->speech->setSlug(uniqid());
 			$this->speech->setDate();
@@ -968,18 +964,12 @@ class Crud extends CI_Controller {
 			is_null($this->session->userdata('username'))) {redirect('login');
 		} 
 
-		$config['upload_path']          = './uploads/community';
-        $config['allowed_types']        = 'gif|jpg|png';
-        $config['encrypt_name']			= TRUE;
-        $config['file_ext_tolower']		= TRUE;
-
-        $this->load->library('upload', $config);
-
 		$this->form_validation->set_rules('name', 'Nom', 'trim|required');
 		$this->form_validation->set_rules('denomination', 'Denomination', 'trim|required');
 		$this->form_validation->set_rules('description', 'Description', 'trim|required');
+		$this->form_validation->set_rules('representant', 'Representant', 'trim|required');
 			
-		if (!$this->upload->do_upload('url') && $this->form_validation->run() == FALSE) {
+		if ($this->form_validation->run() == FALSE) {
 
 			$error = array('error' => $this->upload->display_errors());
 
@@ -991,13 +981,20 @@ class Crud extends CI_Controller {
 
 			$name     			= $this->input->post('name');
 			$denomination     	= $this->input->post('denomination');
+			$siege     			= $this->input->post('siege');
+			$email     			= $this->input->post('email');
 			$description 		= $this->input->post('description');
+			$representant 		= $this->input->post('representant');
 
-			$this->community->setUrl($this->upload->data('file_name'));
+			$this->community->setUrl(uniqid());
 			$this->community->setName($name);
 			$this->community->setDenomination($denomination);
+			$this->community->setSiege($siege);
+			$this->community->setEmail($email);
 			$this->community->setDescription($description);
 			$this->community->setPost(FALSE);
+			$this->community->setSlug(uniqid());
+			$this->community->setRepresentant($representant);
 			$this->community->setDate();
 
 			$this->community->createCommunity();
@@ -1012,18 +1009,12 @@ class Crud extends CI_Controller {
 			is_null($this->session->userdata('username'))) {redirect('login');
 		} 
 
-		$config['upload_path']          = './uploads/community';
-        $config['allowed_types']        = 'gif|jpg|png';
-        $config['encrypt_name']			= TRUE;
-        $config['file_ext_tolower']		= TRUE;
-
-        $this->load->library('upload', $config);
-
 		$this->form_validation->set_rules('name', 'Nom', 'trim|required');
 		$this->form_validation->set_rules('denomination', 'Denomination', 'trim|required');
 		$this->form_validation->set_rules('description', 'Description', 'trim|required');
+		$this->form_validation->set_rules('representant', 'Representant', 'trim|required');
 			
-		if (!$this->upload->do_upload('url') && $this->form_validation->run() == FALSE) {
+		if ($this->form_validation->run() == FALSE) {
 
 			$error = array('error' => $this->upload->display_errors());
 
@@ -1033,25 +1024,22 @@ class Crud extends CI_Controller {
 
 		} else {
 
-			if ($this->upload->do_upload('url') == FALSE) {
-
-				$url     		= $this->input->post('url');
-				$this->community->setUrl($url);
-
-			}else{
-
-				$this->community->setUrl($this->upload->data('file_name'));
-			}
-
 			$name     			= $this->input->post('name');
 			$denomination     	= $this->input->post('denomination');
 			$description 		= $this->input->post('description');
+			$siege 				= $this->input->post('siege');
+			$email 				= $this->input->post('email');
+			$representant 		= $this->input->post('representant');
 
-			
+			$this->community->setUrl(uniqid());
 			$this->community->setName($name);
 			$this->community->setDenomination($denomination);
+			$this->community->setSiege($siege);
+			$this->community->setEmail($email);
 			$this->community->setDescription($description);
 			$this->community->setPost(FALSE);
+			$this->community->setSlug(uniqid());
+			$this->community->setRepresentant($representant);
 			$this->community->setDate();
 
 			$this->community->updateCommunity();
@@ -1061,27 +1049,27 @@ class Crud extends CI_Controller {
 	}
 
 
-	public function active_community($name){
+	public function active_community($slug){
 
 		if ($this->session->userdata('logged_in') == FALSE && 
 			is_null($this->session->userdata('username'))) {redirect('login');
 		} 
 
 		$this->community->setPost(TRUE);
-		$this->community->setName($name);
+		$this->community->setSlug($slug);
 		$this->community->activecommunity();
 		
 		redirect('admin/community');
 	}
 
-	public function desactive_community($name){
+	public function desactive_community($slug){
 
 		if ($this->session->userdata('logged_in') == FALSE && 
 			is_null($this->session->userdata('username'))) {redirect('login');
 		} 
 
 		$this->community->setPost(FALSE);
-		$this->community->setName($name);
+		$this->community->setSlug($slug);
 		$this->community->activeCommunity();
 		
 		redirect('admin/community');
@@ -1362,7 +1350,7 @@ class Crud extends CI_Controller {
 
 		$this->form_validation->set_rules('nom', 'Nom', 'trim|required');
 		$this->form_validation->set_rules('fonction', 'Fonction', 'trim|required');
-		$this->form_validation->set_rules('presentation', 'Présentation', 'trim|required');
+		$this->form_validation->set_rules('provenance', 'Provenance', 'trim|required');
 			
 		if (!$this->upload->do_upload('profile') && $this->form_validation->run() == FALSE) {
 
@@ -1376,12 +1364,14 @@ class Crud extends CI_Controller {
 
 			$nom     		= $this->input->post('nom');
 			$fonction     	= $this->input->post('fonction');
-			$presentation 	= $this->input->post('presentation');
+			$provenance 	= $this->input->post('provenance');
+			$mandat 		= $this->input->post('mandat');
 
 			$this->hierachie->setProfile($this->upload->data('file_name'));
 			$this->hierachie->setNom($nom);
 			$this->hierachie->setFonction($fonction);
-			$this->hierachie->setPresentation($presentation);
+			$this->hierachie->setProvenance($provenance);
+			$this->hierachie->setMandat($mandat);
 			$this->hierachie->setPost(FALSE);
 			$this->hierachie->setSlug(uniqid());
 			$this->hierachie->setDate();
@@ -1432,11 +1422,13 @@ class Crud extends CI_Controller {
 			$nom     		= $this->input->post('nom');
 			$fonction     	= $this->input->post('fonction');
 			$presentation 	= $this->input->post('presentation');
+			$mandat 		= $this->input->post('mandat');
 			
 			
 			$this->hierachie->setNom($nom);
 			$this->hierachie->setFonction($fonction);
 			$this->hierachie->setPresentation($presentation);
+			$this->hierachie->setMandat($mandat);
 			$this->hierachie->setPost(FALSE);
 			$this->hierachie->setSlug(uniqid());
 			$this->hierachie->setDate();

@@ -18,5 +18,19 @@ class About extends CI_Controller {
 		$this->load->view('layout/footer');
 	}
 
+	public function hierachie() {
+
+		$this->load->view('layout/header');
+		$this->load->view('about/hierachie');
+		$this->load->view('layout/footer');
+	}
+
+	public function province() {
+
+		$this->load->view('layout/header');
+		$this->load->view('about/hierachie_province');
+		$this->load->view('layout/footer');
+	}
+
 }
 

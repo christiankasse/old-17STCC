@@ -23,11 +23,20 @@
 				</div>
 
 				<div class="form-group">
-					<input type="text" name="fonction" class="form-control" placeholder="fonction occupée">
+					<input type="text" name="fonction" class="form-control" placeholder="Fonction occupée">
 				</div>
 
 				<div class="form-group">
-				  	<textarea type="text" name="presentation" class="form-control" placeholder="Une breve présentation ici"></textarea>
+					<input type="text" name="provenance" class="form-control" placeholder="Provenance">
+				</div>
+
+
+				<div class="form-group">
+					<select class="custom-select" name="mandat">
+						<option selected>Selectionnez son mandat</option>
+						<option value="MN">National</option>
+						<option value="MP">Provincial</option>
+					</select>
 				</div>
 
 			    <div class="form-group">

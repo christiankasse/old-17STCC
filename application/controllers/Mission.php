@@ -3,10 +3,12 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 
 class Mission extends CI_Controller {
 
-	public function evangelization() {
+	public function show($slug) {
+
+		$data['feed'] = $this->feed->getFeed($slug);
 
 		$this->load->view('layout/header');
-		$this->load->view('mission/evangelization');
+		$this->load->view('mission/show',$data);
 		$this->load->view('layout/footer');
 	}
 

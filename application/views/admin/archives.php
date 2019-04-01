@@ -22,7 +22,7 @@
 					  	
 					  	<div class="card-body text-dark">
 						    
-						    <p class="card-text"><?php echo $row->description; ?></p>
+						    <p class="card-text"><?php echo word_limiter($row->description, 15); ?></p>
 
 						    <p><small><strong>Du <?php echo $row->created_at; ?></strong></small></p>
 						    <p class="text-muted">A : <?php echo $row->location; ?></p>

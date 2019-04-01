@@ -21,19 +21,9 @@
 				</div>
 
 				<div class="form-group">
-				  	<textarea type="" name="description" class="form-control" placeholder="Placez la citation ici"></textarea>
+					<label>Descritption</label>
+				  	<textarea type="" name="description" id="editor1" rows="10" cols="80"  class="form-control" placeholder="Placez la citation ici"></textarea>
 				</div>
-
-				<div class="form-group">
-					<label>Couleur du Contenue</label>
-					<input type="color" name="color_description" class="form-control">
-				</div>
-
-				<div class="form-group">
-					<label>Couleur du titre</label>
-					<input type="color" name="color_text" class="form-control">
-				</div>
-
 				
 			    <div class="form-group">
 			    	<button class="btn btn-lg btn-primary btn-block btn-sm" type="submit">Upload</button>

@@ -14,15 +14,18 @@
 			    <input type="hidden" name="slug" value="<?php echo $fonctionnement['slug'] ?>">
 
 				<div class="form-group">
-				  	<textarea type="" name="structure" class="form-control"><?php echo $fonctionnement['structure'] ?></textarea>
+					<label>Structure</label>
+				  	<textarea type="" name="structure" id="editor1" rows="10" cols="80"  class="form-control"><?php echo $fonctionnement['structure'] ?></textarea>
 				</div>
 
 				<div class="form-group">
-				  	<textarea type="" name="departement" class="form-control" placeholder="Placez les departements ici"><?php echo $fonctionnement['departement'] ?></textarea>
+					<label>Département</label>
+				  	<textarea type="" name="departement" id="editor2" rows="10" cols="80"  class="form-control" placeholder="Placez les departements ici"><?php echo $fonctionnement['departement'] ?></textarea>
 				</div>
 
 				<div class="form-group">
-				  	<textarea type="" name="organisme" class="form-control" placeholder="Placez les organismes partenaire ici"><?php echo $fonctionnement['organisme'] ?></textarea>
+					<label>Organisme</label>
+				  	<textarea type="" name="organisme" id="editor3" rows="10" cols="80"  class="form-control" placeholder="Placez les organismes partenaire ici"><?php echo $fonctionnement['organisme'] ?></textarea>
 				</div>
 
 			    <div class="form-group">

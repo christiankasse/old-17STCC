@@ -11,10 +11,10 @@
 	<h6><strong>Fonction</strong></h6>
 	<p class="text-muted"><?php echo $hierachie['fonction']; ?></p>
 
-	<h6><strong>Présentation</strong></h6>
-	<p><?php echo $hierachie['presentation']; ?></p>
+	<h6><strong>Provenance</strong></h6>
+	<p class="text-muted"><?php echo $hierachie['provenance']; ?></p>
 
-
+	
 	<p>
 		<a href="<?php echo site_url().'/crud/delete_hierachie/'?><?php echo $hierachie['slug'] ?>" class="btn btn-danger btn-sm">Supprimer</a>
 					

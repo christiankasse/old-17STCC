@@ -19,14 +19,17 @@
 				</address>
 
 				<address>
-					<strong>Title here</strong>
-					
+					<strong>Messagerie E-Mail</strong><br>
+					<h6 class="text-muted">Contact@ecc-co.org <br>
+						communication@ecc-co.org <br>
+						presidence@ecc-co.org <br>
+					</h6>
 				</address>
 			</div>
 
 			<div class="col-md-6">
 
-				<h4 class="text-center text-muted">CARTE DE GOOGLE MAPS</h4>
+				<h4 class="text-center text-muted">LOCALISATION GEOGRAPHIQUE</h4>
 
 				<figure>
 					<img src="<?php echo base_url()?>assets/images/bootstrap-social.png" class="img-fluid">

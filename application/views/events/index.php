@@ -10,24 +10,45 @@
 
 	<section class="evenements">
 		
-		<h2 class="text-center">Evénements</h2>
+		<h2 class="text-center">Evénements de l'an <?= date('Y'); ?></h2>
 
 		<div class="row">
 			<div class="col-md-4 text-center">
 
-				<p><a href="">12,822</a></p>
+				<p>
+					<?php 
+						$this->db->from('events');
+						$this->db->where('categorie', 'Sorties_Officielles');
+						$this->db->where('post', 1);
+						echo number_format($this->db->count_all_results()); 
+					?>
+				</p>
 				<p>Sorties Officielles</p>
 			</div>
 
 			<div class="col-md-4 text-center">
 
-				<p><a href="">12,822</a></p>
+				<p>
+					<?php 
+						$this->db->from('events');
+						$this->db->where('categorie', 'Evenements_en_vues');
+						$this->db->where('post', 1);
+						echo number_format($this->db->count_all_results()); 
+					?>
+				</p>
 				<p>Evénements en vues</p>
 			</div>
 
 			<div class="col-md-4 text-center">
 
-				<p><a href="">12,822</a></p>
+				<p>
+					<?php 
+						$this->db->from('events');
+						$this->db->where('categorie', 'Manifestations_entrevues');
+						$this->db->where('post', 1);
+						echo number_format($this->db->count_all_results()); 
+					?>
+				</p>
 				<p>Manifestations entrevues</p>
 			</div>
 		</div>
@@ -44,99 +65,26 @@
 			</thead>
 
 			<tbody>
+				<?php
+					$query = $this->events->getAllEvents();
+					foreach ($query->result() as $row) {
+				?>
 			    <tr>
-			      	<td>30 juin 2018</td>
-			      	<td><a href="">Lorem ipsum dolortur adipisicing elit.</a></td>
-			      	<td>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-			      	tempor incididunt ut labore et </td>
-			    </tr>
-			    <tr>
-			      	<td>11 Novembre 2018</td>
-			      	<td><a href="">Lorem ipsum dolortur adipisicing eli dfslfs dsft.</a></td>
-			      	<td>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-			      	tempor incididunt ut labore et </td>
-			    </tr>
-			    <tr>
-			      	<td>01 Décembre 2018</td>
-			      	<td><a href="">Lorem ipsum dolortur adipisicing eli dfslfs dsft.</a></td>
-			      	<td>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-			      	tempor incididunt ut labore et </td>
-			    </tr>
 
-			     <tr>
-			      	<td>30 juin 2018</td>
-			      	<td><a href="">Lorem ipsum dolortur adipisicing eli dfslfs dsft.</a></td>
-			      	<td>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-			      	tempor incididunt ut labore et </td>
-			    </tr>
-			    <tr>
-			      	<td>11 Novembre 2018</td>
-			      	<td><a href="">Lorem ipsum dolortur adipisicing eli dfslfs dsft.</a></td>
-			      	<td>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-			      	tempor incididunt ut labore et </td>
-			    </tr>
-			    <tr>
-			      	<td>01 Décembre 2018</td>
-			      	<td><a href="">Lorem ipsum dolortur adipisicing eli dfslfs dsft.</a></td>
-			      	<td>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-			      	tempor incididunt ut labore et </td>
-			    </tr>
+			      	<td>
 
-			     <tr>
-			      	<td>30 juin 2018</td>
-			      	<td><a href="">Lorem ipsum dolortur adipisicing eli dfslfs dsft.</a></td>
-			      	<td>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-			      	tempor incididunt ut labore et </td>
-			    </tr>
-			    <tr>
-			      	<td>11 Novembre 2018</td>
-			      	<td><a href="">Lorem ipsum dolortur adipisicing eli dfslfs dsft.</a></td>
-			      	<td>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-			      	tempor incididunt ut labore et </td>
-			    </tr>
-			    <tr>
-			      	<td>01 Décembre 2018</td>
-			      	<td><a href="">Lorem ipsum dolortur adipisicing eli dfslfs dsft.</a></td>
-			      	<td>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-			      	tempor incididunt ut labore et </td>
-			    </tr>
+						<?php 
+							$date = date_create($row->date_events);
+							echo date_format($date, 'd/m/Y');
+						?>
+			      	</td>
 
-			     <tr>
-			      	<td>30 juin 2018</td>
-			      	<td><a href="">Lorem ipsum dolortur adipisicing eli dfslfs dsft.</a></td>
-			      	<td>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-			      	tempor incididunt ut labore et </td>
+			      	<td><a href="<?php echo site_url().'/events/show/'.$row->slug ?>"><?= $row->title ?></a></td>
+			      	<td><?= $row->location ?></td>
 			    </tr>
-			    <tr>
-			      	<td>11 Novembre 2018</td>
-			      	<td><a href="">Lorem ipsum dolortur adipisicing eli dfslfs dsft.</a></td>
-			      	<td>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-			      	tempor incididunt ut labore et </td>
-			    </tr>
-			    <tr>
-			      	<td>01 Décembre 2018</td>
-			      	<td><a href="">Lorem ipsum dolortur adipisicing eli dfslfs dsft.</a></td>
-			      	<td>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-			      	tempor incididunt ut labore et </td>
-			    </tr>
+			<?php } ?>
 			</tbody>
 		</table>
-
-
-		<nav>
-			<ul class="pagination justify-content-center">
-			    <li class="page-item">
-			      <a class="page-link" href="#" tabindex="-1">Previous</a>
-			    </li>
-			    <li class="page-item"><a class="page-link" href="#">1</a></li>
-			    <li class="page-item active"><a class="page-link" href="#">2</a></li>
-			    <li class="page-item"><a class="page-link" href="#">3</a></li>
-			    <li class="page-item">
-			      <a class="page-link" href="#">Next</a>
-			    </li>
-			</ul>
-		</nav>
-		
 	</section>
 </div>
 
@@ -145,29 +93,25 @@
 		<div class="row">
 			
 			<div class="col-md-4">
+				<?php
+					$query = $this->events->getLastestEvents();
+					foreach ($query->result() as $row) {
+				?>
 				<h3>Upcoming Event</h3>
 
-				<p>
-					Lorem ipsum dolor sit anulla pariatur. Excepteur sint occaecat cupidatat non
-					proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
-				</p>
+				<h6><strong>Du</strong> :  
+					<?php 
+						$date = date_create($row->date_events);
+						echo date_format($date, 'd/m/Y');
+					?></h6>
+				<h6><strong>Lieu</strong> : <?= $row->location ?> </h6>
 			</div>
 
 			<div class="col-md-4">
-				<p>
-					Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-					tempor incididunt at nulla pariatur. Excepteur sint occaecat cupidatat non
-					proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
-				</p>
+				<h5>Brève description</h5><hr>
+				<?php echo word_limiter($row->description, 15); ?>
 			</div>
-
-			<div class="col-md-4">
-				<p>
-					Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-					tempor incididunt ut nulla pariatur. Excepteur sint occaecat cupidatat non
-					proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
-				</p>
-			</div>
+		<?php } ?>
 		</div>
 	</div>
 </section>

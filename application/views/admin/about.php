@@ -108,10 +108,10 @@
 
 					<thead>
 				    <tr>
-				      	<th scope="col">Profile</th>
 				      	<th scope="col">Nom</th>
 				      	<th scope="col">Fonction</th>
-				      	<th scope="col">présentation</th>
+				      	<th scope="col">provenance</th>
+				      	<th scope="col">Mandat</th>
 
 				    </tr>
 					</thead>
@@ -123,14 +123,15 @@
 						?>
 
 						<tr>
-							<td>
+							<!-- <td>
 								<figure>
 									<img src="<?php echo base_url()."uploads/hierachie/".$row->profile;?>" class="figure-img img-fluid rounded" alt="img slide">
 								</figure>
-							</td>
+							</td> -->
 							<td><?php echo $row->nom; ?></td>
 							<td><?php echo $row->fonction; ?></td>
-							<td><?php echo word_limiter($row->presentation, 15); ?></td>
+							<td><?php echo $row->provenance; ?></td>
+							<td><?php echo $row->mandat; ?></td>
 							
 
 							<td>

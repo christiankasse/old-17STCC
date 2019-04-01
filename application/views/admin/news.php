@@ -23,7 +23,7 @@
 					  	<div class="card-body text-dark">
 						    
 						    <p class="card-text">
-						    	<?php echo $row->description; ?>
+						    	<?php echo word_limiter($row->description, 15); ?>
 						    </p>
 
 						    <p><small>Postée le <i><?php echo $row->created_at; ?></i></small> </p>

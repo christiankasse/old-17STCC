@@ -11,10 +11,12 @@ class News extends CI_Controller {
 		$this->load->view('layout/footer');
 	}
 
-	public function slug() {
+	public function show($slug) {
+
+		$data['news'] = $this->news->getNews($slug);
 
 		$this->load->view('layout/header');
-		$this->load->view('news/slug');
+		$this->load->view('news/show',$data);
 		$this->load->view('layout/footer');
 	}
 

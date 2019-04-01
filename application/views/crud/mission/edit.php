@@ -35,7 +35,7 @@
 				</div>
 
 				<div class="form-group">
-				  	<textarea type="" name="description" class="form-control" id="editor1"><?php echo $mission['description']; ?></textarea>
+				  	<textarea type="" name="description" id="editor1" rows="10" cols="80"  class="form-control" id="editor1"><?php echo $mission['description']; ?></textarea>
 				
 				</div>
 

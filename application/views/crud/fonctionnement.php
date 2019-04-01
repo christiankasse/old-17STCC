@@ -13,15 +13,15 @@
 			    <h2 class="text-center">Upload Fonctionnement ECC</h2><hr>
 
 				<div class="form-group">
-				  	<textarea type="" name="structure" class="form-control" placeholder="Placez la structure ici"></textarea>
+				  	<textarea type="" name="structure" id="editor1" rows="10" cols="80"  class="form-control" placeholder="Placez la structure ici"></textarea>
 				</div>
 
 				<div class="form-group">
-				  	<textarea type="" name="departement" class="form-control" placeholder="Placez les departements ici"></textarea>
+				  	<textarea type="" name="departement" id="editor2" rows="10" cols="80"  class="form-control" placeholder="Placez les departements ici"></textarea>
 				</div>
 
 				<div class="form-group">
-				  	<textarea type="" name="organisme" class="form-control" placeholder="Placez les organismes partenaire ici"></textarea>
+				  	<textarea type="" name="organisme" id="editor3" rows="10" cols="80"  class="form-control" placeholder="Placez les organismes partenaire ici"></textarea>
 				</div>
 
 			    <div class="form-group">

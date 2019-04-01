@@ -117,7 +117,27 @@ class News_model extends CI_Model {
 
 		$this->db->select('*');
 		$this->db->from('news');
+		$this->db->order_by('id', 'DESC');
+
+		return $query = $this->db->get();
+	}
+
+	public function getAllNews() {
+
+		$this->db->select('*');
+		$this->db->from('news');
+		$this->db->where('post', 1);
+		$this->db->order_by('id', 'DESC');
+
+		return $query = $this->db->get();
+	}
+
+	public function getLastNews() {
+
+		$this->db->select('*');
+		$this->db->from('news');
 		$this->db->limit(5);
+		$this->db->where('post', 1);
 		$this->db->order_by('id', 'DESC');
 
 		return $query = $this->db->get();
@@ -134,6 +154,12 @@ class News_model extends CI_Model {
 		}
 
 		$query = $this->db->get_where('news', array('slug' => $slug));
+		return $query->row_array();
+	}
+
+	public function getNews($slug){
+
+		$query = $this->db->get_where('news', array('slug' => $slug, 'post' => 1));
 		return $query->row_array();
 	}
 

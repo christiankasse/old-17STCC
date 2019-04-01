@@ -13,23 +13,28 @@
 			    <h2 class="text-center">Upload Presentation</h2><hr>
 
 				<div class="form-group">
-				  	<textarea type="" name="historique" class="form-control" placeholder="Placez l'historique ici"></textarea>
+					<label>Historique de l'ECC</label>
+				  	<textarea type="" name="historique" id="editor1" rows="10" cols="80"  class="form-control" placeholder="Placez l'historique ici"></textarea>
 				</div>
 
 				<div class="form-group">
-				  	<textarea type="" name="status" class="form-control" placeholder="Placez les status ici"></textarea>
+					<label>Status de l'ECC</label>
+				  	<textarea type="" name="status" id="editor2" rows="10" cols="80"  class="form-control" placeholder="Placez les status ici"></textarea>
 				</div>
 
 				<div class="form-group">
-				  	<textarea type="" name="mission" class="form-control" placeholder="Placez la mission ici"></textarea>
+					<label>Mission de l'ECC</label>
+				  	<textarea type="" name="mission" id="editor3" rows="10" cols="80"  class="form-control" placeholder="Placez la mission ici"></textarea>
 				</div>
 
 				<div class="form-group">
-				  	<textarea type="" name="symbole" class="form-control" placeholder="Placez la symbole ici"></textarea>
+					<label>Symbole</label>
+				  	<textarea type="" name="symbole" id="editor4" rows="10" cols="80"  class="form-control" id="editor1" rows="10" cols="80" placeholder="Placez la symbole ici"></textarea>
 				</div>
 
 				<div class="form-group">
-				  	<textarea type="" name="vision" class="form-control" placeholder="Placez la vision ici"></textarea>
+					<label>Vision de l'ECC</label>
+				  	<textarea type="" name="vision" id="editor5" rows="10" cols="80"  class="form-control" placeholder="Placez la vision ici"></textarea>
 				</div>
 
 			    <div class="form-group">

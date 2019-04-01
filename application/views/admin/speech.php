@@ -30,9 +30,9 @@
 						?>
 						<tr>
 							<td><?php echo $row->speaker; ?></td>
-							<td style="background-color: <?php echo $row->color_text; ?>; color: #FFF"><strong><?php echo $row->role; ?></strong></td>
+							<td><strong><?php echo $row->role; ?></strong></td>
 							
-							<td style="background-color: <?php echo $row->color_description;?>; color: #FFF"><i><?php echo $row->description; ?></i></td>
+							<td><i><?php echo word_limiter($row->description, 20); ?></i></td>
 
 							<td>
 

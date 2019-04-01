@@ -36,7 +36,7 @@
 				</div>
 
 				<div class="form-group">
-					<textarea type="text" name="description" class="form-control" placeholder="Description de la partie"><?php echo $events['description'] ?></textarea>
+					<textarea type="text" name="description" id="editor1" rows="10" cols="80"  class="form-control" placeholder="Description de la partie"><?php echo $events['description'] ?></textarea>
 				</div>
 
 

@@ -132,8 +132,17 @@ class Feed_model extends CI_Model {
 
 		$this->db->select('*');
 		$this->db->from('feed');
-		$this->db->limit(3);
-		$this->db->order_by('id', 'DESC');
+		$this->db->limit(4);
+
+		return $query = $this->db->get();
+	}
+
+	public function getAllFeed() {
+
+		$this->db->select('*');
+		$this->db->from('feed');
+		$this->db->where('post', 1);
+		$this->db->limit(4);
 
 		return $query = $this->db->get();
 	}
@@ -147,6 +156,12 @@ class Feed_model extends CI_Model {
 
 			return $query->result_array();
 		}
+
+		$query = $this->db->get_where('feed', array('slug' => $slug));
+		return $query->row_array();
+	}
+
+	public function getFeed($slug){
 
 		$query = $this->db->get_where('feed', array('slug' => $slug));
 		return $query->row_array();

@@ -53,7 +53,7 @@
             <div class="form-group text-center">
                 <div class="form-check">
                     <input class="form-check-input" type="checkbox" value="news_accept" name="status" required>
-                    J'accepte les termes et conditions. <a href=""><i>Lire les termes et conditions</i></a>
+                    J'accepte les termes et conditions. <a href="<?php echo site_url('feed/privacy') ?>"><i>Lire les termes et conditions</i></a>
                 </div>
             </div>
             <p>
